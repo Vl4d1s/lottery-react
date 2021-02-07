@@ -16,7 +16,7 @@ const Content = (props) => {
     <div>
       <h1 className="ui header">💸 Lottery Contract 💸</h1>
       <h2 className="line">{`
-                          In this account you can buy lottery tickets at a cost of 0.1 site per card. 
+                          In this account you can buy lottery tickets at a cost of 0.1 ether per card. 
                           Then, the lottery manager will randomly choose a winner and the money will go into his account 💰.`}</h2>
       <div className="paragraph">
         <div className="line">

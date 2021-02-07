@@ -65,21 +65,24 @@ const App = () => {
   }, []);
 
   const onSubmit = async (term) => {
-    if(term === '0.2'){
-      console.log("===")
-    }
     setMessege("Waitin on transaction success...");
-    await lottery.methods.enter().send({
-      from: userAddress,
-      value: web3.utils.toWei(term, "ether"),
-    });
-    setNumOfPlayers(parseInt(numOfPlayers)+1)
-    const players = await lottery.methods.getPlayers().call();
-    setPlayers(players)
-    setContractAccountBalance(
-      parseFloat(contractAccountBalance) + parseFloat(term)
-    );
-    setMessege("You have been entered!");
+
+    try{
+      await lottery.methods.enter().send({
+        from: userAddress,
+        value: web3.utils.toWei(term, "ether"),
+      });
+      setNumOfPlayers(parseInt(numOfPlayers)+1)
+      const players = await lottery.methods.getPlayers().call();
+      setPlayers(players)
+      setContractAccountBalance(
+        parseFloat(contractAccountBalance) + parseFloat(term)
+      );
+      setMessege("You have been entered!");
+    }catch(error){
+      setMessege("You Rejected!");
+    }
+
   };
 
   const onClick = async () => {
@@ -113,10 +116,6 @@ const App = () => {
             </div>
             <div className="five wide column">
               <Form onSubmit={onSubmit} />
-              {console.log("user:",userAddress)}
-              {console.log("user:",managerAddress)}
-              {console.log(userAddress === managerAddress)}
-
               {userAddress.toLowerCase() === managerAddress.toLowerCase() ? (
                 <div>
                   <br/>
