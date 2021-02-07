@@ -20,7 +20,7 @@ const Form = (props) => {
         <div className="field">
           <label>Amount of ether to enter: </label>
           <input className="ui input" value={term} onChange={onInputChange} />
-          <div class="ui pointing label">Please enter a value</div>
+          <div class="ui pointing red basic label">1 Ticket = 0.1 ether</div>
         </div>
         <button className="ui primary button">Enter</button>
       </form>

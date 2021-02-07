@@ -12,13 +12,6 @@ const Content = (props) => {
     players
   } = props;
 
-const renderPlayers = () =>{
-  players.map((player)=>{
-    <div class="item">{player}</div>
-  })
-}
-
-
   return (
     <div>
       <h1 className="ui header">Lottery Contract</h1>

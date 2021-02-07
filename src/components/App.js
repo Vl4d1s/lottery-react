@@ -21,13 +21,10 @@ const App = () => {
 
   useEffect(() => {
     const func = async () => {
-      console.log("lottery");
       const accounts = await ethereum.request({
         method: "eth_requestAccounts",
       });
-
-      const managerAddress = "0x96c54C87e1BEfe77912C73b205e8A43714266548";
-
+      const managerAddress = await lottery.methods.manager().call();
       const contractAccountBalance = await web3.eth.getBalance(
         lottery.options.address
       );
@@ -51,7 +48,6 @@ const App = () => {
       setLastWinner(lastWinner);
       setPlayers(players)
       
-      console.log("Players",players)
     };
 
     func();
@@ -59,10 +55,7 @@ const App = () => {
 
   useEffect(() => {
     const isAccountsChanged = async () => {
-      console.log("isAccountsChanged");
 
-      console.log("User:", userAddress);
-      console.log("Manager:", managerAddress);
 
       ethereum.on("accountsChanged", async () => {
         const accounts = await web3.eth.getAccounts();
