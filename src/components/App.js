@@ -99,7 +99,8 @@ const App = () => {
   };
 
   const renderContent = () => {
-    if (userAddress && managerAddress) {
+    console.log(userAddress)
+    if (userAddress) {
       return (
         <div className="ui grid">
           <div className="ui row">
