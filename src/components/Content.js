@@ -14,7 +14,10 @@ const Content = (props) => {
 
   return (
     <div>
-      <h1 className="ui header">Lottery Contract</h1>
+      <h1 className="ui header">💸 Lottery Contract 💸</h1>
+      <h2 className="line">{`
+                          In this account you can buy lottery tickets at a cost of 0.1 site per card. 
+                          Then, the lottery manager will randomly grill a winner and the money will go into his account 💰.`}</h2>
       <div className="paragraph">
         <div className="line">
           {`The contract address is: `}
@@ -50,6 +53,10 @@ const Content = (props) => {
           <a href={`https://rinkeby.etherscan.io/address/${lastWinner}`}>
             {lastWinner}
           </a>
+        </div>
+        <div className="line">
+          <br/>
+          List of players:
         </div>
             <PlayersList players={players}/>
       </div>
