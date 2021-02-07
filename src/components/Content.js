@@ -56,7 +56,7 @@ const Content = (props) => {
         </div>
         <div className="line">
           <br/>
-          List of players:
+          {players.length > 0 ? 'Player list:' : null}
         </div>
             <PlayersList players={players}/>
       </div>

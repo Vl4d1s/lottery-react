@@ -55,8 +55,6 @@ const App = () => {
 
   useEffect(() => {
     const isAccountsChanged = async () => {
-
-
       ethereum.on("accountsChanged", async () => {
         const accounts = await web3.eth.getAccounts();
 
@@ -67,6 +65,9 @@ const App = () => {
   }, []);
 
   const onSubmit = async (term) => {
+    if(term === '0.2'){
+      console.log("===")
+    }
     setMessege("Waitin on transaction success...");
     await lottery.methods.enter().send({
       from: userAddress,
@@ -112,8 +113,13 @@ const App = () => {
             </div>
             <div className="five wide column">
               <Form onSubmit={onSubmit} />
-              {userAddress === managerAddress ? (
+              {console.log("user:",userAddress)}
+              {console.log("user:",managerAddress)}
+              {console.log(userAddress === managerAddress)}
+
+              {userAddress.toLowerCase() === managerAddress.toLowerCase() ? (
                 <div>
+                  <br/>
                   <WinnerPick onClick={onClick} />
                 </div>
               ) : null}

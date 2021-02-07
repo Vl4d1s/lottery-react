@@ -2,11 +2,19 @@ import React, { useState } from "react";
 
 const Form = (props) => {
   const [term, setTerm] = useState("");
+  const [isCorrect, setIsCorrect] = useState(true);
+
+
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    props.onSubmit(term);
-    setTerm('');
+    if(term !== '0.1')
+      setIsCorrect(false)
+    else{
+      setIsCorrect(true)
+      props.onSubmit(term);
+      setTerm('');
+    }
   };
 
   const onInputChange = (event) => {
@@ -20,7 +28,7 @@ const Form = (props) => {
         <div className="field">
           <label>Amount of ether to enter: </label>
           <input className="ui input" value={term} onChange={onInputChange} />
-          <div class="ui pointing red basic label">1 Ticket = 0.1 ether</div>
+          {!isCorrect && <div class="ui pointing red basic label">1 Ticket = 0.1 ether</div>}
         </div>
         <button className="ui primary button">Enter</button>
       </form>
