@@ -85,7 +85,7 @@ const App = () => {
   };
 
   const renderContent = () => {
-    if (userAddress !== "" && contractAddress !== "") {
+    if (1) {
       return (
         <div className="ui grid">
           <div className="ui row">
@@ -113,7 +113,7 @@ const App = () => {
         </div>
       );
     }
-    return <Loader />;
+    //return <Loader />;
   };
 
   return (
