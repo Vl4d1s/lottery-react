@@ -1,18 +1,28 @@
 import React from "react";
+import PlayersList from './PlayersList'
 
 const Content = (props) => {
   const {
     contractAddress,
     userAddress,
     managerAddress,
-    players,
+    numOfPlayers,
     contractAccountBalance,
+    lastWinner,
+    players
   } = props;
+
+const renderPlayers = () =>{
+  players.map((player)=>{
+    <div class="item">{player}</div>
+  })
+}
+
 
   return (
     <div>
       <h1 className="ui header">Lottery Contract</h1>
-      <div class="paragraph">
+      <div className="paragraph">
         <div className="line">
           {`The contract address is: `}
           <a href={`https://rinkeby.etherscan.io/address/${contractAddress}`}>
@@ -37,11 +47,18 @@ const Content = (props) => {
           )}
         </div>
         <div className="line">
-          There are currently {players.length} players entered,
+          There are currently {numOfPlayers} players entered,
         </div>
         <div className="line">
           competiong to win {contractAccountBalance} ether!
         </div>
+        <div className="line">
+        {`Last Winner: `}
+          <a href={`https://rinkeby.etherscan.io/address/${lastWinner}`}>
+            {lastWinner}
+          </a>
+        </div>
+            <PlayersList players={players}/>
       </div>
     </div>
   );

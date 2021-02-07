@@ -9,7 +9,7 @@ const WinnerPick = (props) => {
     <div>
       <h4>Ready to pick a winner?</h4>
       <button className="ui secondary button" onClick={onButtonClick}>
-        <i class="money bill alternate outline icon"></i>
+        <i className="money bill alternate outline icon"></i>
         Pick a winner
       </button>
     </div>

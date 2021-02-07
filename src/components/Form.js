@@ -6,6 +6,7 @@ const Form = (props) => {
   const onFormSubmit = (event) => {
     event.preventDefault();
     props.onSubmit(term);
+    setTerm('');
   };
 
   const onInputChange = (event) => {
