@@ -116,7 +116,11 @@ const App = () => {
     return <Loader />;
   };
 
-  return <div className="ui container">{renderContent()}</div>;
+  return (
+    <div style={{ marginTop: "50px" }} className="ui container">
+      {renderContent()}
+    </div>
+  );
 };
 
 export default App;
