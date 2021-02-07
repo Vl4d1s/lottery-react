@@ -21,7 +21,7 @@ const App = () => {
 
   useEffect(() => {
     const func = async () => {
-      console.log("func");
+      console.log("lottery");
       const accounts = await ethereum.request({
         method: "eth_requestAccounts",
       });

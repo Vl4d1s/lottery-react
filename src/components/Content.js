@@ -47,7 +47,7 @@ const renderPlayers = () =>{
           )}
         </div>
         <div className="line">
-          There are currently {numOfPlayers} players entered,
+          There are currently {numOfPlayers} players entered.
         </div>
         <div className="line">
           competiong to win {contractAccountBalance} ether!
