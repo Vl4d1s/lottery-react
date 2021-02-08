@@ -25,7 +25,9 @@ const Content = (props) => {
             {contractAddress}
           </a>
         </div>
-        <div className="line">{`Diployed to: Rinkeby Testnet Network`}</div>
+        <div className="line">Diployed to <a href={`https://www.rinkeby.io/#stats`}>
+          Rinkeby Testnet Network
+          </a></div>
         <div className="line">
           {`Your address is: `}
           <a href={`https://rinkeby.etherscan.io/address/${userAddress}`}>
