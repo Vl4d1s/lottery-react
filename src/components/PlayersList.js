@@ -14,7 +14,7 @@ const PlayersList = ({players}) => {
     );
   });
 
-  return <div className="ui list">{renderedList}</div>;
+  return <div className="ui divided selection list">{renderedList}</div>;
 };
 
 
